@@ -5,10 +5,20 @@ using System.Threading.Tasks;
 
 namespace Laboratorio5_UEFA.Models
 {
-    public class Album
+    public class estampa
+    {
+        public string tipo { get; set; }
+        public int numero { get; set; }
+        public bool disponible { get; set; }
+    }
+    public class coleccion
     {
         public string tipo { get; set; }
         public List<carta> numero = new List<carta>();
+        public List<carta> disponibles = new List<carta>();
+        public List<carta> cambios = new List<carta>();
+        public List<carta> faltantes = new List<carta>();
+
         public void insertarNumero(int num)
         {
             carta temp = new carta(num);
@@ -17,10 +27,34 @@ namespace Laboratorio5_UEFA.Models
                 numero.Add(temp);
             }
         }
+        public void insetaradquisicion(int numero)
+        {
+            carta temp = new carta(numero);
+            if (BuscarRepetida(numero) == true)
+            {
+                cambios.Add(temp);
+            }
+            else
+            {
+                disponibles.Add(temp);
+            }
+        }
+        public bool BuscarRepetida(int num)
+        {
+            List<carta> finded = disponibles.FindAll(x => x.numero.Equals(num));
+            if (finded.Count != 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         public bool BuscarCarta(int num)
         {
             List<carta> finded = numero.FindAll(x => x.numero.Equals(num));
-            if (finded.Count == 1)
+            if (finded.Count != 0)
             {
                 return true;
             }
