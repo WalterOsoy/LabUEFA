@@ -8,6 +8,6 @@ namespace Laboratorio5_UEFA.Repository
     public interface IUefaAlbum
     {
         void LoadAlbum();
-        void loadAdquiridas();
+        void LoadAdquiridas();
     }
 }

@@ -10,16 +10,12 @@ namespace Laboratorio5_UEFA.Repository
     {
         public static string ubicacion1 = @"C:\Users\DISTELSA\Desktop\album.csv";
         public static string ubicacion2 = @"C:\Users\DISTELSA\Desktop\calcomanias.csv";
-        public static coleccion obj = new coleccion();
-        public static Dictionary<string, coleccion> album = new Dictionary<string, coleccion>();
+        public static Dictionary<string, album> album = new Dictionary<string, album>();
         public static Dictionary<string, coleccion> adquirido = new Dictionary<string, coleccion>();
         public static Dictionary<estampa, bool> estado = new Dictionary<estampa, bool>();
-        public UefaAlbum()
+        public  void LoadAlbum()
         {
-
-        }
-        public void LoadAlbum()
-        {
+            album obj = new album();
             System.IO.StreamReader reader = new System.IO.StreamReader(ubicacion1);
             while (!reader.EndOfStream)
             {
@@ -35,12 +31,13 @@ namespace Laboratorio5_UEFA.Repository
                     }
                 }
                 album.Add(obj.tipo, obj);
-                obj = new coleccion();
+                obj = new album();
             }
             reader.Close();
         }
-        public void loadAdquiridas()
+        public void LoadAdquiridas()
         {
+            coleccion obj = new coleccion();
             System.IO.StreamReader reader = new System.IO.StreamReader(ubicacion2);
             while (!reader.EndOfStream)
             {
