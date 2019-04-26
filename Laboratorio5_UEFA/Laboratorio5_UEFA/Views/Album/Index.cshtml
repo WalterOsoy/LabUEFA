@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Laboratorio5_UEFA.Models.coleccion>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+
+
+| @Html.ActionLink("Load Stamps File", "LoadStampsFile") |
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.tipo)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.tipo)
+                </td>
+                <td>                    
+                    @Html.ActionLink("Details", "Details", new { id = item.tipo }) |
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@Html.Raw(TempData["msg"])

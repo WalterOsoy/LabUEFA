@@ -30,3 +30,5 @@ C:\Users\DISTELSA\Desktop\ED1 lab\LaboratorioUEFA\Laboratorio5_UEFA\Laboratorio5
 C:\Users\DISTELSA\Desktop\ED1 lab\LaboratorioUEFA\Laboratorio5_UEFA\Laboratorio5_UEFA\obj\Debug\netcoreapp2.1\Laboratorio5_UEFA.dll
 C:\Users\DISTELSA\Desktop\ED1 lab\LaboratorioUEFA\Laboratorio5_UEFA\Laboratorio5_UEFA\obj\Debug\netcoreapp2.1\Laboratorio5_UEFA.pdb
 C:\Users\DISTELSA\Desktop\ED1 lab\LaboratorioUEFA\Laboratorio5_UEFA\Laboratorio5_UEFA\obj\Debug\netcoreapp2.1\Laboratorio5_UEFA.csproj.CopyComplete
+C:\Users\DISTELSA\Desktop\ED1 lab\LaboratorioUEFA\Laboratorio5_UEFA\Laboratorio5_UEFA\obj\Debug\netcoreapp2.1\Razor\Views\Album\Details.g.cshtml.cs
+C:\Users\DISTELSA\Desktop\ED1 lab\LaboratorioUEFA\Laboratorio5_UEFA\Laboratorio5_UEFA\obj\Debug\netcoreapp2.1\Razor\Views\Album\Index.g.cshtml.cs

@@ -1,0 +1,91 @@
+﻿@model Laboratorio5_UEFA.Models.coleccion
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div>
+    <h4>EquipoViewModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.tipo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.tipo)
+        </dd>
+    </dl>
+
+    <h4>Collected</h4>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Disponibles.FirstOrDefault().numero)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Disponibles)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.numero)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
+    <h4>Missing</h4>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Faltantes.FirstOrDefault().numero)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Faltantes)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.numero)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
+    <h4>Repited</h4>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Repetidas.FirstOrDefault().numero)
+                </th>                
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Repetidas)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.numero)
+                    </td>                    
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
+</div>
+<div>
+    @*@Html.ActionLink("Edit", "Edit", new { id = Model.tipo }) |*@
+    <a asp-action="Index">Back to List</a>
+</div>

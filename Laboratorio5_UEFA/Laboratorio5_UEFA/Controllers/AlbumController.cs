@@ -9,15 +9,27 @@ namespace Laboratorio5_UEFA.Controllers
 {
     public class AlbumController : Controller
     {
-        readonly IUefaAlbum card;
-        public IActionResult Index()
+        readonly IUefaAlbum Album;
+        public AlbumController(IUefaAlbum A)
         {
-            return View();
+            this.Album = A;
+        }        
+        public ActionResult Index()
+        {
+            return View(Album.getAlbumTeams());
         }
         public ActionResult SubirArchivo()
         {
-            card.LoadAlbum();
-            card.loadAdquiridas();
+            Album.LlenarListados();            
+            return RedirectToAction(nameof(Index));
+        }
+        public ActionResult Details(string id)
+        {
+            return View(Album.GetTeam(id));
+        }
+        public ActionResult LoadStampsFile(int No, string Team)
+        {
+            Album.LlenarListados();
             return RedirectToAction(nameof(Index));
         }
     }
